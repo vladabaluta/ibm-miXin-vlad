@@ -1,8 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import MainComponent from './components/main/mainComponent'
 
+class myApp extends Component {
+  render(){
+    return (
+      <div className="myApp">
+        <h1>App</h1>
+      </div>
+    )
+  }
+}
 
 function App() {
   return (
