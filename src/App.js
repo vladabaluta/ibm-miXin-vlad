@@ -10,7 +10,6 @@ class App extends Component {
   constructor(props) {
     super(props)
 
-    this.url = 'http://localhost:3000/todo';
   }
 
   state = {

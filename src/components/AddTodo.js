@@ -1,14 +1,23 @@
 import React, { Component } from 'react'
+import axios from 'axios';
+import ApiCallService from '../services/ApiCall';
 
 export class AddTodo extends Component {
+
+
     state ={
         title: ''
     }
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.addTodo(this.state.title);
-        this.setState({ title: '' });
+        this.props.addTodo(this.state.title, this.state.id);
+        this.setState({ title: '', id:'' });
+        console.log(this.state.id)
+        axios.post('http://localhost:3000/todo',{text: this.state.title, id: this.state.id}).then(res =>{
+          console.log(res)
+          console.log(res.data)
+        })
     }
 
     onChange = (e) => this.setState({ [e.target.name]:
